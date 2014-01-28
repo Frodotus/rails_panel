@@ -16,6 +16,9 @@ angular.module('RailsPanel', [])
         emacs: "emacs://open?url=file://%s&line=%d&column=%d",
         mine: "rubymine://open?url=file://%s&line=%d"}
       var editor = localStorage.getItem("railspanel.editor");
+      var work_find_what = localStorage.getItem("railspanel.work_find_what");
+      var work_replace_with = localStorage.getItem("railspanel.work_replace_with");
+      filename = filename.replace(work_find_what,work_replace_with);
       var editorPrefix = mapping[editor]
       if (editor === 'sblm') {
         var out = sprintf(editorPrefix, filename);
